@@ -23,10 +23,12 @@ and it'll be added to my todo list
   - [x] study about file management
   - [ ] improve documentation
   - [ ] make it more readable using iterators
-  - [ ] pass the logic to the lib file
+  - [x] pass the logic to the lib file
+  - [ ] Write the `help` command text
 
 - Optimizations & Improvements
   - [ ] Create an abstraction to use the file better
+  - [x] Remove all warnings from the compiler
 
 - [x] Add
   - I need to check which command was passed
