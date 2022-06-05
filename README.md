@@ -1,4 +1,4 @@
-# quick-notes-cli
+# quick-notes-cli (Qkn)
 
 
 ## what i want it to do
@@ -12,18 +12,23 @@ and it'll be added to my todo list
 ## steps to create the functionalities
 
 - First things first
-  - [ ] test the use of multiple commands
-  - [ ] study about file management
+  - [x] test the use of multiple commands
+  - [x] study about file management
   - [ ] improve documentation
   - [ ] make it more readable using iterators
   - [ ] pass the logic to the lib file
 
-- Add
+- Optimizations & Improvements
+  - [ ] Create an abstraction to use the file better
+
+- [x] Add
   - I need to check which command was passed
   - Create a file to store these texts
   - Add the second value passed to the file
-- Remove
+- [x] List
+  - List all notes with numbers to help when removing
+- [ ] Remove
   - Enumerate all lines inside the file using iterators
   - Remove the exact line following the next arg
-- Reset
+- [ ] Reset
   - Open the file and simply remove all the content inside
