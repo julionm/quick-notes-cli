@@ -73,21 +73,17 @@ impl QknStorage {
             }
         };
 
-        let mut counter: u32 = 0;
+        let index_int: u32 = match index.to_digit(10) {
+            Some(n) => n,
+            None => 0
+        };
 
-        let content_without_line: String = content.lines().filter(|_line| {
-            if counter == u32::from(index) {
-                return true
-            }
-
-            counter += 1;
-
-            false
-        }).collect();
-
-        println!("{content_without_line}");
-
-        println!("removed note {index}");
+        let content_without_line: String = content.lines()
+                .enumerate()
+                .filter(
+                    |(i, _line)| *i == (index_int as usize)
+                )
+                .map(|(_i, line)| line).collect();
 
         Ok(())
     }
@@ -119,13 +115,9 @@ impl QknStorage {
             }
         };
 
-        let mut counter: u32 = 0;
-
-        let content: String = content.lines().map(|line| {
-            let new_line = format!("[{counter}] {line}\n");
-            counter += 1;
-            new_line
-        }).collect();
+        let content: String = content.lines().enumerate().map(
+                |(i, line)| format!("[{i}] {line}\n")
+            ).collect();
 
         println!("{content}");
 

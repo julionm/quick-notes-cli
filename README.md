@@ -25,6 +25,7 @@ and it'll be added to my todo list
   - [ ] make it more readable using iterators
   - [x] pass the logic to the lib file
   - [ ] Write the `help` command text
+  - [ ] Fix the `remove` command to receive numbers greater than 9
 
 - Optimizations & Improvements
   - [ ] Create an abstraction to use the file better
