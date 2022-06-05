@@ -1,6 +1,13 @@
 # quick-notes-cli (Qkn)
 
 
+## how to run
+
+- Clone this repo // Download the code
+- Install cargo on your OS
+- Run `cargo build --release`
+- Run `cargo install --path .` on the root folder
+
 ## what i want it to do
 
 - make possible i can call from anywhere in the terminal `qkn add "Create Issue about something"`  
