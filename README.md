@@ -43,5 +43,7 @@ and it'll be added to my todo list
 - [x] Remove
   - Enumerate all lines inside the file using iterators
   - Remove the exact line following the next arg
-- [ ] Reset
+- [x] Reset
   - Open the file and simply remove all the content inside
+- [ ] Help
+  - [ ] Add some useful information for help command
