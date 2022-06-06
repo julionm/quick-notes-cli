@@ -19,7 +19,7 @@ impl QknStorage {
         let mut file = match OpenOptions::new()
             .read(true)
             .write(true)
-            .open(".qkn.txt") {
+            .open(&self.filename) {
             Ok(f) => f,
             Err(_e) => {
                 File::create(&self.filename)?
@@ -49,7 +49,7 @@ impl QknStorage {
         let mut file = match OpenOptions::new()
             .read(true)
             .write(true)
-            .open(".qkn.txt") {
+            .open(&self.filename) {
 
                 Ok(f) => f,
                 Err(_e) => {
@@ -81,9 +81,25 @@ impl QknStorage {
         let content_without_line: String = content.lines()
                 .enumerate()
                 .filter(
-                    |(i, _line)| *i == (index_int as usize)
+                    |(i, _line)| *i != (index_int as usize)
                 )
-                .map(|(_i, line)| line).collect();
+                .map(|(_i, line)| format!("{}\n", line)).collect();
+
+        match remove_file(&self.filename) {
+            Ok(a) => (a),
+            Err(e) => {
+                eprintln!("{e}");
+                return Err("Unexpected error on removing note");
+            }
+        };
+
+        match self.add_note(content_without_line) {
+            Ok(a) => a,
+            Err(e) => {
+                eprintln!("{e}");
+                return Err("Error on writing the new text");
+            }
+        };
 
         Ok(())
     }
@@ -134,7 +150,7 @@ pub fn run(mut args_iter: env::Args, qkn_storage: QknStorage) -> Result<(), &'st
     match args_iter.next() {
         Some(option) => {
             match option.as_str() {
-                "add" => {
+                "add" | "a" => {
                     let arg = match args_iter.next() {
                         Some(a) => a,
                         None => {
@@ -147,7 +163,7 @@ pub fn run(mut args_iter: env::Args, qkn_storage: QknStorage) -> Result<(), &'st
                         return Err("The adding note failed, verify if the correct syntax was used with help}")
                     }
                 },
-                "list" => {
+                "list" | "l" => {
                     match qkn_storage.list() {
                         Ok(a) => a,
                         Err(e) => {
@@ -162,7 +178,7 @@ pub fn run(mut args_iter: env::Args, qkn_storage: QknStorage) -> Result<(), &'st
                         return Err("Error on reseting the notes, have you created any?")
                     }
                 },
-                "remove" => {
+                "remove" | "rm" => {
                     let arg = match args_iter.next() {
                         Some(a) => a,
                         None => {

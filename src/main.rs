@@ -11,7 +11,7 @@ fn main() {
 
     args_iter.next();
 
-    let qkn_storage = QknStorage::new(String::from(".qkn.txt"));
+    let qkn_storage = QknStorage::new(String::from("/tmp/.qkn.txt"));
 
     if let Err(e) = run(args_iter, qkn_storage) {
         if e.starts_with("Not enough arguments") {

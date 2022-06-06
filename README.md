@@ -27,6 +27,9 @@ and it'll be added to my todo list
   - [ ] Write the `help` command text
   - [ ] Fix the `remove` command to receive numbers greater than 9
 
+- Issues
+  - [ ] Change the creation path for the file
+
 - Optimizations & Improvements
   - [ ] Create an abstraction to use the file better
   - [x] Remove all warnings from the compiler
