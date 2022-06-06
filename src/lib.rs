@@ -104,9 +104,23 @@ impl QknStorage {
         Ok(())
     }
 
-    pub fn reset(&self) -> Result<(), Box<dyn Error>> {
+    pub fn reset(&self) -> Result<(), &str> {
 
-        println!("Reseted list at: {}", self.filename);
+        match remove_file(&self.filename) {
+            Ok(a) => (a),
+            Err(e) => {
+                eprintln!("{e}");
+                return Err("Unexpected error on removing note");
+            }
+        };
+
+        match File::create(&self.filename) {
+            Ok(a) => a,
+            Err(e) => {
+                eprintln!("{e}");
+                return Err("Failed in reseting notes storage");
+            }
+        };
 
         Ok(())
     }

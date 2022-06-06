@@ -25,13 +25,13 @@ and it'll be added to my todo list
   - [ ] make it more readable using iterators
   - [x] pass the logic to the lib file
   - [ ] Write the `help` command text
-  - [ ] Fix the `remove` command to receive numbers greater than 9
+  - [x] Fix the `remove` command to receive numbers greater than 9
 
 - Issues
-  - [ ] Change the creation path for the file
+  - [x] Change the creation path for the file
 
 - Optimizations & Improvements
-  - [ ] Create an abstraction to use the file better
+  - [ ] Create an abstraction to use the file better - *DEPRECATED*
   - [x] Remove all warnings from the compiler
 
 - [x] Add
@@ -40,7 +40,7 @@ and it'll be added to my todo list
   - Add the second value passed to the file
 - [x] List
   - List all notes with numbers to help when removing
-- [ ] Remove
+- [x] Remove
   - Enumerate all lines inside the file using iterators
   - Remove the exact line following the next arg
 - [ ] Reset
