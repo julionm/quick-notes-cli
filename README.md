@@ -33,6 +33,7 @@ and it'll be added to my todo list
 - Optimizations & Improvements
   - [ ] Create an abstraction to use the file better - *DEPRECATED*
   - [x] Remove all warnings from the compiler
+  - [ ] make it much faster
 
 - [x] Add
   - I need to check which command was passed
