@@ -31,6 +31,7 @@ and it'll be added to my todo list
   - [ ] Create an abstraction to use the file better - *DEPRECATED*
   - [x] Remove all warnings from the compiler
   - [ ] make it much faster
+  - [ ] maybe create a file and rather than doing multiple println, read that file and show in the terminal
 
 - [x] Add
   - I need to check which command was passed

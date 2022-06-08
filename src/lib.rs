@@ -157,7 +157,14 @@ impl QknStorage {
 }
 
 pub fn help() {
-    println!("HELP!");
+    println!("Quick Notes CLI\n");
+    println!("To run the commands use qkn and some of the following options:\n");
+    println!("  help, h - show this help command");
+    println!("  add, a - add a net note");
+    println!("  remove, rm - remove the note with the corresponding index");
+    println!("  list, l - list all the notes with indexes");
+    println!("  reset - erase all the notes\n");
+    println!("Command example: qkn add \"My First Note\"");
 }
 
 pub fn run(mut args_iter: env::Args, qkn_storage: QknStorage) -> Result<(), &'static str> {
