@@ -3,8 +3,8 @@
 
 ## how to run
 
-- Clone this repo // Download the code
-- Install cargo on your OS
+- **You need to have `cargo` installed**
+- Clone/Download this repo
 - Run `cargo build --release`
 - Run `cargo install --path .` on the root folder
 
@@ -26,9 +26,6 @@ and it'll be added to my todo list
   - [x] pass the logic to the lib file
   - [ ] Write the `help` command text
   - [x] Fix the `remove` command to receive numbers greater than 9
-
-- Issues
-  - [x] Change the creation path for the file
 
 - Optimizations & Improvements
   - [ ] Create an abstraction to use the file better - *DEPRECATED*
