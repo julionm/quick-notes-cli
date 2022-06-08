@@ -44,5 +44,5 @@ and it'll be added to my todo list
   - Remove the exact line following the next arg
 - [x] Reset
   - Open the file and simply remove all the content inside
-- [ ] Help
-  - [ ] Add some useful information for help command
+- [x] Help
+  - [x] Add some useful information for help command
