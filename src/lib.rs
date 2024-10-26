@@ -78,12 +78,21 @@ impl QknStorage {
             None => 0
         };
 
+        let line_count = content.lines().count();
         let content_without_line: String = content.lines()
                 .enumerate()
-                .filter(
-                    |(i, _line)| *i != (index_int as usize)
-                )
-                .map(|(_i, line)| format!("{}\n", line)).collect();
+                .filter_map(|(i, line)| {
+                    if i != (index_int as usize) {
+                        if i == line_count - 1 {
+                            return Some(format!("{}", line));
+                        } else {
+                            return Some(format!("{}\n", line));
+                        }
+                    }
+
+                    None
+                })
+                .collect();
 
         match remove_file(&self.filename) {
             Ok(a) => a,

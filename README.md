@@ -34,7 +34,7 @@ and it'll be added to my todo list
   - [ ] maybe create a file and rather than doing multiple println, read that file and show in the terminal - *DEPRECATED*
 
 - Issues
-  - [ ] when removing a item it doesn't remove it index from the list
+  - [x] when removing a item it not removing the index from the list
 
 - [x] Add
   - I need to check which command was passed
