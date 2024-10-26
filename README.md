@@ -24,14 +24,17 @@ and it'll be added to my todo list
   - [ ] improve documentation
   - [ ] make it more readable using iterators
   - [x] pass the logic to the lib file
-  - [ ] Write the `help` command text
+  - [x] Write the `help` command text
   - [x] Fix the `remove` command to receive numbers greater than 9
 
 - Optimizations & Improvements
   - [ ] Create an abstraction to use the file better - *DEPRECATED*
   - [x] Remove all warnings from the compiler
   - [ ] make it much faster
-  - [ ] maybe create a file and rather than doing multiple println, read that file and show in the terminal
+  - [ ] maybe create a file and rather than doing multiple println, read that file and show in the terminal - *DEPRECATED*
+
+- Issues
+  - [ ] when removing a item it doesn't remove it index from the list
 
 - [x] Add
   - I need to check which command was passed

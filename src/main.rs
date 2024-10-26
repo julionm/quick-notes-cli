@@ -15,7 +15,7 @@ fn main() {
 
     if let Err(e) = run(args_iter, qkn_storage) {
         if e.starts_with("Not enough arguments") {
-            help()
+            help();
         } else {
             eprintln!("{e}");
         }

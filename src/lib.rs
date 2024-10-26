@@ -86,7 +86,7 @@ impl QknStorage {
                 .map(|(_i, line)| format!("{}\n", line)).collect();
 
         match remove_file(&self.filename) {
-            Ok(a) => (a),
+            Ok(a) => a,
             Err(e) => {
                 eprintln!("{e}");
                 return Err("Unexpected error on removing note");
@@ -107,7 +107,7 @@ impl QknStorage {
     pub fn reset(&self) -> Result<(), &str> {
 
         match remove_file(&self.filename) {
-            Ok(a) => (a),
+            Ok(a) => a,
             Err(e) => {
                 eprintln!("{e}");
                 return Err("Unexpected error on removing note");
@@ -213,12 +213,12 @@ pub fn run(mut args_iter: env::Args, qkn_storage: QknStorage) -> Result<(), &'st
                     }
                 },
                 _ => {
-                    help()
+                    help();
                 }
             };
         },
         None => {
-            help()
+            help();
         }
     }
 
